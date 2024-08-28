@@ -10,7 +10,67 @@
 body {
     font-family: Roboto, sans-serif;
 }
+.go-up {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 15px;
+    font-size: 24px;
+    background-color: #ff7a57;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+.go-up.show {
+    opacity: 1;
+    visibility: visible;
+}
 
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #333333;
+    opacity: 1;  
+    visibility: visible;
+    transition: opacity 0.75s ease, visibility 0.75s ease; 
+    z-index: 1000; 
+  }
+  
+  .loader--hidden {
+    opacity: 0; 
+    visibility: hidden; 
+  }
+.nav--hidden{
+    opacity: 0; 
+    visibility: hidden; 
+}
+  .loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #dddddd;
+    border-top-color: #ff7a57;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite; 
+  }
+  
+ 
+  @keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
 .bg-orange {
     background-color: var(--main-col);
 }
